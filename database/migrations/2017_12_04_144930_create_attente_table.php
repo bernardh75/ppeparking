@@ -14,8 +14,8 @@ class CreateAttenteTable extends Migration
     public function up()
     {
         Schema::create('attente', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('rangplaceattente');
+            $table->timestamps();	
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIdutilisateurToUsersTable extends Migration
+class AddFkPlace extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddIdutilisateurToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::table('place', function (Blueprint $table) {
+            $table->integer('idutilisateurplace')->unsigned();
+	    $table->foreign('idutilisateurplace')->references('idutilisateur')->on('utilisateur');
         });
     }
 
@@ -25,7 +26,7 @@ class AddIdutilisateurToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('place', function (Blueprint $table) {
             //
         });
     }
