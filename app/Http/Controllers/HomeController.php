@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+	if (\Auth::user()->Droitsadmin == 1)
+        return view('espaceadmin');
+	else
+	    return view('espaceutilisat');
+        //return view ('home');
     }
 }
