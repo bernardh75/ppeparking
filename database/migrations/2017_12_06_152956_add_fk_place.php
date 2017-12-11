@@ -15,7 +15,7 @@ class AddFkPlace extends Migration
     {
         Schema::table('place', function (Blueprint $table) {
             $table->integer('idutilisateurplace')->unsigned();
-	    $table->foreign('idutilisateurplace')->references('idutilisateur')->on('utilisateur');
+	    $table->foreign('idutilisateurplace')->references('id')->on('users');
         });
     }
 

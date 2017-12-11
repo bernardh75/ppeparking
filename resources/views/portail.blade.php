@@ -23,8 +23,8 @@ include '/var/www/html/Parking/resources/views/entete.html';
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Connexion</a>
-                    <a href="https://laracasts.com">Inscription</a>
+                    <a href="http://127.0.0.1:8000/login">Connexion</a>
+                    <a href="http://127.0.0.1:8000/register">Inscription</a>
                     <a href="https://laravel-news.com">Mode admin</a>
                     
                 </div>

@@ -22,3 +22,16 @@ Route::get('/entête', function () {
 Route::get('/', function () {
     return view('portail');
 });
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

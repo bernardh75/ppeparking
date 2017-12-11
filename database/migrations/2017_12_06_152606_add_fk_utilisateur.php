@@ -13,9 +13,9 @@ class AddFkUtilisateur extends Migration
      */
     public function up()
     {
-        Schema::table('utilisateur', function (Blueprint $table) {
-            $table->integer('idplaceutil')->unsigned();
-	    $table->integer('rangplaceattenteutil')->unsigned();
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('idplaceutil')->nullable()->unsigned();
+	    $table->integer('rangplaceattenteutil')->nullable()->unsigned();
 	    $table->foreign('idplaceutil')->references('idplace')->on('place');
             $table->foreign('rangplaceattenteutil')->references('rangplaceattente')->on('attente');
         });
@@ -28,7 +28,7 @@ class AddFkUtilisateur extends Migration
      */
     public function down()
     {
-        Schema::table('utilisateur', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
