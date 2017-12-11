@@ -23,9 +23,9 @@ include '/var/www/html/Parking/resources/views/entete.html';
                 </div>
 
                 <div class="links">
-                    <a href="http://127.0.0.1:8000/login">Connexion</a>
-                    <a href="http://127.0.0.1:8000/register">Inscription</a>
-                    <a href="https://laravel-news.com">Mode admin</a>
+                    <a href="http://127.0.0.1:8000/login">Réserver</a>
+                    <a href="http://127.0.0.1:8000/register">Mon compte</a>
+                    <a href="https://laravel-news.com"></a>
                     
                 </div>
             </div>
