@@ -6,6 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                
                 <div class="links">
                     <a href="https://laravel.com/docs">Réserver</a>             
                     <a href="https://laravel-news.com">Mon compte</a>

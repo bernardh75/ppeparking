@@ -6,10 +6,20 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="links">
-                    <a href="https://laravel.com/docs">Réserver</a>             
-                    <a href="https://laravel-news.com">Mon compte</a>
-
-                    <a href="https://laravel.com/docs">Administration</a>             
+                    <ul>
+                        <li><a href="https://laravel.com/docs">Réserver</a></li>             
+                        <li><a href="https://laravel-news.com">Mon compte</a></li>
+                    
+                        <li><a href="https://laravel-news.com">Administration</a>
+                             <ul>
+                                <li><a href="https://laravel.com/docs">Gestion Utilisateurs</a></li>
+                                <li><a href="https://laravel.com/docs">Gestion Places</a></li>    
+                                <li><a href="https://laravel.com/docs"> Gestion Liste d'attente</a></li>          
+                                <li><a href="https://laravel.com/docs">Historique des réservations</a></li>      
+                            </ul>
+                         </li>
+                   </ul>
+                   
                     
                     
                 </div>
