@@ -13,9 +13,9 @@ class AddFkPlace extends Migration
      */
     public function up()
     {
-        Schema::table('place', function (Blueprint $table) {
-            $table->integer('idutilisateurplace')->unsigned();
-	    $table->foreign('idutilisateurplace')->references('id')->on('users');
+        Schema::table('places', function (Blueprint $table) {
+            $table->integer('idutilisateurplace')->unsigned()->nullable();
+	        $table->foreign('idutilisateurplace')->references('id')->on('users');
         });
     }
 
@@ -26,7 +26,7 @@ class AddFkPlace extends Migration
      */
     public function down()
     {
-        Schema::table('place', function (Blueprint $table) {
+        Schema::table('places', function (Blueprint $table) {
             //
         });
     }
