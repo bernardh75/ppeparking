@@ -23,6 +23,20 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/gestionutilisateurs', function () {
+    $utilisateurs = App\User::all();
+
+    return view('admin.gestionutilisateurs', ['utilisateurs' => $utilisateurs]);
+});
+
+Route::get('/gestionplaces', function () {
+    $places = App\places::all();
+
+    return view('admin.gestionplaces', ['places' => $places]);
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

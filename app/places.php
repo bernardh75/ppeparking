@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class places extends Model
 {
     protected $fillable = [
-        'nomplace'
+        'id','nomplace'
     ];
 
     public function user() 

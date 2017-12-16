@@ -16,6 +16,8 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        'Illuminate\Auth\Events\réserver' => ['App\Listeners\réserver'],
+
     ];
 
     /**
@@ -27,6 +29,10 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+         Event::listen('réserver', function ($foo, $bar) {
+        
+        });
+
+        
     }
 }
