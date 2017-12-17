@@ -18,16 +18,20 @@
 					  	{!! $errors->first('email', '<small class="help-block">:message</small>') !!}
 					</div>
 					<div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!}">
-					  	{!! Form::password('password', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+					  	{!! Form::password('password', null, ['class' => 'form-control', 'placeholder' => 'Mot de passe']) !!}
 					  	{!! $errors->first('password', '<small class="help-block">:message</small>') !!}
 					</div>
-					<div class="form-group">
-						<div class="checkbox">
-							<label>
-								{!! Form::checkbox('Droitsadmin', 1, null) !!}Administrateur
-							</label>
-						</div>
-					</div>
+					
+					@if ($user->Droitsadmin == 1)				
+						<div class='form-group'>
+							<div class='checkbox'>
+								<label>
+									{!! Form::checkbox('Droitsadmin', 1, null) !!}Administrateur
+								</label>
+							</div>
+						</div>"
+					@endif
+					
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

@@ -9,10 +9,12 @@
 			<div class="panel-body"> 
 				<p>Nom : {{ $user->name }}</p>
 				<p>Email : {{ $user->email }}</p>
-				<p>Mot de Passe : {{ $user->password}}</p>
+				<p>Mot de Passe : {{ $user->password }}</p>
 				@if($user->Droitsadmin == 1)
 					Administrateur
 				@endif
+				<p>Place occupée : {{ $user->idplaceutil }}</p>
+				<p>Rang Liste d'attente : {{ $user->rangplaceattenteutil }}
 			</div>
 		</div>				
 		<a href="javascript:history.back()" class="btn btn-primary">

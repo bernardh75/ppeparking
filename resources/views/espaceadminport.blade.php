@@ -4,8 +4,8 @@
             <div class="panel panel-default">
                 <div class="links">
                     <ul>
-                        <li><a href="https://laravel.com/docs">Réserver</a></li>             
-                        <li>{!! link_to_route('user.edit', 'Mon compte', ['class' => 'btn btn-success btn-block']) !!}</li></li>
+                        <li><a href="https://laravel.com/docs">Réserver</a></li>
+                        <li><td>{!! link_to_action('UserController@edit', 'Mon compte', ['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</td></li>
                     
                         <li>Administration
                              <ul>

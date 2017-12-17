@@ -23,6 +23,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
+
 Route::resource('user', 'UserController');
 
 Route::resource('place', 'PlaceController');

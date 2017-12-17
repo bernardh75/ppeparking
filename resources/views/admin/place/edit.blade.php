@@ -13,6 +13,10 @@
 					  	{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom de la place']) !!}
 					  	{!! $errors->first('name', '<small class="help-block">:message</small>') !!}
 					</div>
+					<div class="form-group {!! $errors->has('idutilisateur') ? 'has-error' : '' !!}">
+					  	{!! Form::('name', null, ['class' => 'form-control', 'placeholder' => 'Nom de la place']) !!}
+					  	{!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+					</div>
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

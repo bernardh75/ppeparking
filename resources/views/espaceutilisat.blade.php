@@ -8,8 +8,8 @@
             <div class="panel panel-default">
                 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Réserver</a>             
-                    <a href="https://laravel-news.com">Mon compte</a>
+                    <li><a href="https://laravel.com/docs">Réserver</a></li>            
+                    <li><{!! link_to_action('UserController@edit', 'Mon compte', ['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</li>
                     
                 </div>
 
