@@ -9,7 +9,7 @@
                     
                         <li>Administration
                              <ul>
-                                <li><a href="http://127.0.0.1:8000/gestionutilisateurs">Gestion Utilisateurs</a></li>
+                                <li><{!! link_to_route('user.index', 'Gestion des utilisateurs', ['class' => 'btn btn-success btn-block']) !!}</li>
                                 <li><a href="http://127.0.0.1:8000/gestionplaces">Gestion Places</a></li>    
                                 <li><a href="https://laravel.com/docs"> Gestion Liste d'attente</a></li>          
                                 <li><a href="https://laravel.com/docs">Historique des réservations</a></li>      

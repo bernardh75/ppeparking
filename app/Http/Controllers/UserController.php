@@ -1,54 +1,73 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserUpdateRequest;
+
+use App\Repositories\UserRepository;
 
 use Illuminate\Http\Request;
-use App\Repositories\User\UserInterface as UserInterface;
-
 
 class UserController extends Controller
 {
 
+    protected $userRepository;
 
-    public function __construct(UserInterface $user)
+    protected $nbrPerPage = 4;
+
+    public function __construct(UserRepository $userRepository)
     {
-        $this->user = $user;
+        $this->userRepository = $userRepository;
     }
 
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $users = $this->user->getAll();
-        return view('users.index',['users']);
+        $users = $this->userRepository->getPaginate($this->nbrPerPage);
+        $links = $users->render();
+
+        return view('admin.index', compact('users', 'links'));
     }
 
+    public function create()
+    {
+        return view('admin.create');
+    }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function store(UserCreateRequest $request)
+    {
+        $user = $this->userRepository->store($request->all());
+
+        return redirect('user')->withOk("L'utilisateur " . $user->name . " a été créé.");
+    }
+
     public function show($id)
     {
-        $user = $this->user->find($id);
-        return view('users.show',['user']);
+        $user = $this->userRepository->getById($id);
+
+        return view('admin.show',  compact('user'));
     }
 
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function delete($id)
+    public function edit($id)
     {
-        $this->user->delete($id);
-        return redirect()->route('users');
+        $user = $this->userRepository->getById($id);
+
+        return view('admin.edit',  compact('user'));
     }
+
+    public function update(UserUpdateRequest $request, $id)
+    {
+        $this->userRepository->update($id, $request->all());
+        
+        return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
+    }
+
+    public function destroy($id)
+    {
+        $this->userRepository->destroy($id);
+
+        return back();
+    }
+
 }

@@ -23,11 +23,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/gestionutilisateurs', function () {
-    $utilisateurs = App\User::all();
-
-    return view('admin.gestionutilisateurs', ['utilisateurs' => $utilisateurs]);
-});
 
 Route::get('/gestionplaces', function () {
     $places = App\places::all();
@@ -36,6 +31,8 @@ Route::get('/gestionplaces', function () {
 });
 
 
+
+Route::resource('user', 'UserController');
 
 Auth::routes();
 
