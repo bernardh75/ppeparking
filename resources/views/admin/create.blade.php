@@ -27,7 +27,7 @@
 					<div class="form-group">
 						<div class="checkbox">
 							<label>
-								{!! Form::checkbox('admin', 1, null) !!} Administrateur
+								{!! Form::checkbox('Droitsadmin', 1, null) !!} Administrateur
 							</label>
 						</div>
 					</div>

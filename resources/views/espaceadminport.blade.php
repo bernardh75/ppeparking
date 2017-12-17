@@ -5,12 +5,12 @@
                 <div class="links">
                     <ul>
                         <li><a href="https://laravel.com/docs">Réserver</a></li>             
-                        <li><a href="https://laravel-news.com">Mon compte</a></li>
+                        <li>{!! link_to_route('user.edit', 'Mon compte', ['class' => 'btn btn-success btn-block']) !!}</li></li>
                     
                         <li>Administration
                              <ul>
-                                <li><{!! link_to_route('user.index', 'Gestion des utilisateurs', ['class' => 'btn btn-success btn-block']) !!}</li>
-                                <li><a href="http://127.0.0.1:8000/gestionplaces">Gestion Places</a></li>    
+                                <li>{!! link_to_route('user.index', 'Gestion des utilisateurs', ['class' => 'btn btn-success btn-block']) !!}</li>
+                                <li>{!! link_to_route('place.index', 'Gestion des places', ['class' => 'btn btn-success btn-block']) !!}</li>    
                                 <li><a href="https://laravel.com/docs"> Gestion Liste d'attente</a></li>          
                                 <li><a href="https://laravel.com/docs">Historique des réservations</a></li>      
                             </ul>

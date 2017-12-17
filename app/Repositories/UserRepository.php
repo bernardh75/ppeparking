@@ -18,7 +18,7 @@ class UserRepository
 	{
 		$user->name = $inputs['name'];
 		$user->email = $inputs['email'];	
-		$user->admin = isset($inputs['admin']);	
+		$user->Droitsadmin = isset($inputs['Droitsadmin']);	
 
 		$user->save();
 	}

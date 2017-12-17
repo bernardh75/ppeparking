@@ -23,16 +23,9 @@ Route::get('/register', function () {
     return view('register');
 });
 
-
-Route::get('/gestionplaces', function () {
-    $places = App\places::all();
-
-    return view('admin.gestionplaces', ['places' => $places]);
-});
-
-
-
 Route::resource('user', 'UserController');
+
+Route::resource('place', 'PlaceController');
 
 Auth::routes();
 

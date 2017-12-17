@@ -28,9 +28,9 @@ class User extends Authenticatable
     ];
 
     
-    public function posts() 
+    public function places() 
     {
-        return $this->hasMany(\App\places);
+        return $this->hasMany('App\Place');
     }
 
     public function getAll()
