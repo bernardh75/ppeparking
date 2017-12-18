@@ -8,10 +8,10 @@
 			<div class="panel-heading">Création d'une place</div>
 			<div class="panel-body"> 
 				<div class="col-sm-12">
-					{!! Form::open(['route' => 'user.store', 'class' => 'form-horizontal panel']) !!}	
-					<div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom de la place']) !!}
-						{!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+					{!! Form::open(['route' => 'place.store', 'class' => 'form-horizontal panel']) !!}	
+					<div class="form-group {!! $errors->has('nomplace') ? 'has-error' : '' !!}">
+						{!! Form::text('nomplace', null, ['class' => 'form-control', 'placeholder' => 'Nom de la place']) !!}
+						{!! $errors->first('nomplace', '<small class="help-block">:message</small>') !!}
 					</div>
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}

@@ -15,9 +15,9 @@ class AddFkUtilisateur extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('idplaceutil')->nullable()->unsigned();
-	    $table->integer('rangplaceattenteutil')->nullable()->unsigned();
-	    $table->foreign('idplaceutil')->references('idplace')->on('places');
-            $table->foreign('rangplaceattenteutil')->references('rangplaceattente')->on('attente');
+    	    $table->integer('rangplaceattenteutil')->nullable()->unsigned();
+    	    $table->foreign('idplaceutil')->references('id')->on('places');
+            $table->foreign('rangplaceattenteutil')->references('id')->on('attente');
         });
     }
 

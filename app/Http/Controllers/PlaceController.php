@@ -3,10 +3,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Requests\PlaceCreateRequest;
 use App\Http\Requests\PlaceUpdateRequest;
 
 use App\Repositories\PlaceRepository;
+
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -21,6 +24,8 @@ class PlaceController extends Controller
     {
         $this->placeRepository = $placeRepository;
     }
+
+    
 
     public function index()
     {
@@ -37,35 +42,37 @@ class PlaceController extends Controller
 
     public function store(PlaceCreateRequest $request)
     {
+        $inputs = array_merge($request->all(), ['idutilisateurplace' => $request->user()->id]);
         $place = $this->placeRepository->store($request->all());
 
         return redirect('place')->withOk("La place " . $place->nomplace . " a été créé.");
     }
 
-    public function show($idplace)
+    public function show($id)
     {
-        $place = $this->placeRepository->getByIdplace($idplace);
+        $place = $this->placeRepository->getById($id);
 
         return view('admin.place.show',  compact('place'));
     }
 
-    public function edit($idplace)
+    public function edit($id)
     {
-        $place = $this->placeRepository->getByIdplace($idplace);
+        $users = User::all();
+        $place = $this->placeRepository->getById($id);
 
-        return view('admin.place.edit',  compact('place'));
+        return view('admin.place.edit',  compact('place', 'users'));
     }
 
-    public function update(PlaceUpdateRequest $request, $idplace)
+    public function update(PlaceUpdateRequest $request, $id)
     {
-        $this->placeRepository->update($idplace, $request->all());
+        $this->placeRepository->update($id, $request->all());
         
         return redirect('place')->withOk("La place " . $request->input('nomplace') . " a été modifiée.");
     }
 
-    public function destroy($idplace)
+    public function destroy($id)
     {
-        $this->placeRepository->destroy($idplace);
+        $this->placeRepository->destroy($id);
 
         return back();
     }

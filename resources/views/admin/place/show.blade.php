@@ -8,7 +8,7 @@
 			<div class="panel-heading">Fiche place</div>
 			<div class="panel-body"> 
 				<p>Nom : {{ $place->nomplace }}</p>
-				<p>Occupation : {{ $place->idutilisateur }}</p>
+				<p>Occupation : {{ $place->idutilisateurplace }}</p>
 			</div>
 		</div>				
 		<a href="javascript:history.back()" class="btn btn-primary">

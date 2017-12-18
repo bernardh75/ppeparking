@@ -26,13 +26,13 @@
                 <tbody>
                     @foreach ($places as $place)
                         <tr>
-                            <td>{!! $place->idplace !!}</td>
+                            <td>{!! $place->id !!}</td>
                             <td class="text-primary"><strong>{!! $place->nomplace !!}</strong></td>
-                            <td>{!! $place->idutilisateur !!}</td>
-                            <td>{!! link_to_route('place.show', 'Voir', [$place->idplace], ['class' => 'btn btn-success btn-block']) !!}</td>
-                            <td>{!! link_to_route('place.edit', 'Modifier', [$place->idplace], ['class' => 'btn btn-warning btn-block']) !!}</td>
+                            <td>{!! $place->idutilisateurplace !!}</td>
+                            <td>{!! link_to_route('place.show', 'Voir', [$place->id], ['class' => 'btn btn-success btn-block']) !!}</td>
+                            <td>{!! link_to_route('place.edit', 'Modifier', [$place->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                             <td>
-                                {!! Form::open(['method' => 'DELETE', 'route' => ['place.destroy', $place->idplace]]) !!}
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['place.destroy', $place->id]]) !!}
                                     {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cette place ?\')']) !!}
                                 {!! Form::close() !!}
                             </td>

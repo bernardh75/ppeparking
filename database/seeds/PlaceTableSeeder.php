@@ -12,7 +12,7 @@ class PlaceTableSeeder extends Seeder
      */
     public function run()
     {
-         factory(App\places::class, 50)->create();
+         factory(App\Place::class, 20)->create();
          
     }
 }

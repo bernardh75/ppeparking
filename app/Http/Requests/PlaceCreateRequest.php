@@ -24,7 +24,8 @@ class PlaceCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'nomplace'=>'required|max:255|unique:places',
+            'nomplace' => 'required|max:255|unique:places',
+
         ];
     }
 }

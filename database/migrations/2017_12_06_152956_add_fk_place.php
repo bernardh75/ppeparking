@@ -17,7 +17,7 @@ class AddFkPlace extends Migration
             $table->integer('idutilisateurplace')->unsigned()->nullable();
 	        $table->foreign('idutilisateurplace')->references('id')->on('users');
         });
-    }\
+    }
 
     /**
      * Reverse the migrations.

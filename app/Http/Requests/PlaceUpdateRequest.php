@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Place;
 
 class PlaceUpdateRequest extends FormRequest
 {
@@ -11,6 +12,8 @@ class PlaceUpdateRequest extends FormRequest
      *
      * @return bool
      */
+   
+
     public function authorize()
     {
         return true;
@@ -23,9 +26,10 @@ class PlaceUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        $idplace = $this->place;
+        $id = $this->place;
         return [
-            'required|max:255|unique:places,name,'.$idplace,
+            'nomplace' => 'required|max:255|unique:places,nomplace,'. $id,
+            'idutilisateurplace' => 'unique:places, idutilisateurplace' . $id,
         ];
     }
 }
