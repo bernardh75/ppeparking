@@ -32,7 +32,7 @@
                             <td>{!! $attente->idutilisateurattente !!}</td>
                             <td>
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['attente.destroy', $attente->id]]) !!}
-                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur de la file ?\')']) !!}
+                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block']) !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>

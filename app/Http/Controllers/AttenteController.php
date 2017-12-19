@@ -22,9 +22,11 @@ class AttenteController extends Controller
 
     protected $nbrPerPage = 10;
 
-    public function __construct(AttenteRepository $attenteRepository)
+    public function __construct(AttenteRepository $attenteRepository, User $user, Place $place)
     {
         $this->attenteRepository = $attenteRepository;
+        $this->user = $user;
+        $this->place = $place;
     }
 
     public function index()
@@ -52,19 +54,18 @@ class AttenteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AttenteCreateRequest $request)
+    public function store(AttenteCreateRequest $request, Place $place, User $user)
     {
-        //$users = User::all();
-        //$places = Place::all();
         $attente = $this->attenteRepository->store($request->all());
 
-       // while($places->id == true) {
-         //   if(Auth::user()->id = $places->idutilisateurplace)
-           //     $placeutil = $places->id;
-            //}
+        while($place->id == true) {
+           if(Auth::user()->id = $place->idutilisateurplace)
+                $placeutil = $place->id;
+                return $place->id;
+            }
        
             
-        return redirect('attente')->withOk("Vous avez été ajouté dans la liste d'attente. </br> Un administrateur se chargera au plus vite de vous attribuer une place. </br>Actualisez votre page pour connaître votre place ! </br></br>Numéro de place : " /*. $placeutil*/);
+        return redirect('attente')->withOk("Vous avez été ajouté dans la liste d'attente. </br> Un administrateur se chargera au plus vite de vous attribuer une place. </br>Actualisez votre page pour connaître votre place !");
     }
 
     /**
@@ -75,7 +76,9 @@ class AttenteController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+        $places = Place::all();
+        return view ('admin.attente.show', compact('users','places'));
     }
 
     /**

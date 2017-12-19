@@ -10,10 +10,11 @@
 				<div class="col-sm-12">
 					{!! Form::open(['route' => 'attente.store', 'class' => 'form-horizontal panel']) !!}	
 					<div class="form-group {!! $errors->has('idutilisateur') ? 'has-error' : '' !!}">
-					  	<select name="user" id="user" class="form-control">					  		
-						  		<option label="">{{ $user = Auth::user()->id }}</option>
+					  	<select name="user" id="user" class="form-control" style="display:none;">					  		
+						  		<option label="" >{{ $user = Auth::user()->id }}</option>
 						</select>
 					</div>
+					<div> Voulez vous résevrer une place de parking ? </div>
 					{!! Form::submit('Confirmer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>
