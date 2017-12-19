@@ -17,7 +17,7 @@ class AddFkUtilisateur extends Migration
             $table->integer('idplaceutil')->nullable()->unsigned();
     	    $table->integer('rangplaceattenteutil')->nullable()->unsigned();
     	    $table->foreign('idplaceutil')->references('id')->on('places');
-            $table->foreign('rangplaceattenteutil')->references('id')->on('attente');
+            $table->foreign('rangplaceattenteutil')->references('id')->on('attentes');
         });
     }
 

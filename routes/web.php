@@ -23,11 +23,12 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/home','HomeController@index')->name('home');
 
 Route::resource('user', 'UserController');
 
 Route::resource('place', 'PlaceController');
 
-Auth::routes();
+Route::resource('attente', 'AttenteController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();

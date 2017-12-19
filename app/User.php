@@ -30,8 +30,14 @@ class User extends Authenticatable
     
     public function places() 
     {
-        return $this->hasMany(\App\Place::class);
+        return $this->hasMany(App\Place::class);
     }
+
+    public function attentes() 
+    {
+        return $this->belongsTo(\App\Attente::class);
+    }
+
 
     public function getAll()
     {

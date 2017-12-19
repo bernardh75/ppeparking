@@ -13,6 +13,14 @@
 						{!! Form::text('nomplace', null, ['class' => 'form-control', 'placeholder' => 'Nom de la place']) !!}
 						{!! $errors->first('nomplace', '<small class="help-block">:message</small>') !!}
 					</div>
+					<div class="form-group {!! $errors->has('idutilisateur') ? 'has-error' : '' !!}">
+					  	<select name="user" id="user" class="form-control">
+					  		<option value="" selected="selected"></option>
+						  	@foreach($users as $user)
+						  		<option label="">{{ $user->id }}</option>
+						  	@endforeach
+						</select>
+					</div>
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

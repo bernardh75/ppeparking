@@ -37,15 +37,15 @@ class PlaceController extends Controller
 
     public function create()
     {
-        return view('admin.place.create');
+        $users = User::all();
+        return view('admin.place.create', compact('users'));
     }
 
     public function store(PlaceCreateRequest $request)
     {
-        $inputs = array_merge($request->all(), ['idutilisateurplace' => $request->user()->id]);
         $place = $this->placeRepository->store($request->all());
 
-        return redirect('place')->withOk("La place " . $place->nomplace . " a été créé.");
+        return redirect('place')->withOk("La place " . $place->id . " a été créé.");
     }
 
     public function show($id)
@@ -67,7 +67,7 @@ class PlaceController extends Controller
     {
         $this->placeRepository->update($id, $request->all());
         
-        return redirect('place')->withOk("La place " . $request->input('nomplace') . " a été modifiée.");
+        return redirect('place')->withOk("La place " . $request->input('id') . " a été modifiée.");
     }
 
     public function destroy($id)

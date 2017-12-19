@@ -34,11 +34,10 @@ class PlaceRepository
 
 	public function store(Array $inputs)
 	{
-		$this->place->create($inputs);
 
 		$place = new $this->place;		
 
-		$this->save($place);
+		$this->save($place, $inputs);
 
 		return $place;
 	}

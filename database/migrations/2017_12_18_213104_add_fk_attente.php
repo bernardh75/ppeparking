@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttenteTable extends Migration
+class AddFkAttente extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAttenteTable extends Migration
      */
     public function up()
     {
-        Schema::create('attentes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();	
+        Schema::table('attentes', function (Blueprint $table) {
+            $table->integer('idutilisateurattente')->unsigned()->nullable();
+            $table->foreign('idutilisateurattente')->references('id')->on('users');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateAttenteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attentes');
+        //
     }
 }

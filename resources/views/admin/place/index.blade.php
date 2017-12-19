@@ -17,7 +17,6 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom</th>
                         <th>Occupation</th>
                         <th></th>
                         <th></th>
@@ -27,8 +26,7 @@
                     @foreach ($places as $place)
                         <tr>
                             <td>{!! $place->id !!}</td>
-                            <td class="text-primary"><strong>{!! $place->nomplace !!}</strong></td>
-                            <td>{!! $place->idutilisateurplace !!}</td>
+                            <td>ID n° {!! $place->idutilisateurplace !!}</td>
                             <td>{!! link_to_route('place.show', 'Voir', [$place->id], ['class' => 'btn btn-success btn-block']) !!}</td>
                             <td>{!! link_to_route('place.edit', 'Modifier', [$place->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                             <td>
