@@ -7,7 +7,7 @@
                         <div style="display: none;">{{$user = Auth::user()}}</div>
                         <li>{!! link_to_action('AttenteController@create', 'Réserver une place',['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</li>
                         <li>{!! link_to_action('AttenteController@show', 'Numéro de réservation de place',['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</li>
-                        <li>{!! link_to_action('AttenteController@edit', 'Mon compte', ['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</li>  @if( Auth::user()->Droitsadmin == 1)
+                        <li>{!! link_to_action('UserController@edit', 'Mon compte', ['id' => Auth::User()->id, 'class' => 'btn btn-warning btn-block']) !!}</li>  @if( Auth::user()->Droitsadmin == 1)
                         <li>Administration
                              <ul>
                                 <li>{!! link_to_route('user.index', 'Gestion des utilisateurs', ['class' => 'btn btn-success btn-block']) !!}</li>

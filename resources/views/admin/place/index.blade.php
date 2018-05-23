@@ -17,7 +17,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Occupation</th>
+                        <th>Nom utilisateur</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -26,7 +26,14 @@
                     @foreach ($places as $place)
                         <tr>
                             <td>{!! $place->id !!}</td>
-                            <td>ID n° {!! $place->idutilisateurplace !!}</td>
+                            <td>@foreach ($users as $user)
+                                @if($user->id == $place->idutilisateurplace)
+                        
+                                    {!! $user->name !!}
+                                @else
+                        
+                                @endif
+                            @endforeach</td>
                             <td>{!! link_to_route('place.show', 'Voir', [$place->id], ['class' => 'btn btn-success btn-block']) !!}</td>
                             <td>{!! link_to_route('place.edit', 'Modifier', [$place->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                             <td>

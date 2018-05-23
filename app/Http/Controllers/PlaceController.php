@@ -29,10 +29,11 @@ class PlaceController extends Controller
 
     public function index()
     {
+        $users = User::all();
         $places = $this->placeRepository->getPaginate($this->nbrPerPage);
         $links = $places->render();
 
-        return view('admin.place.index', compact('places', 'links'));
+        return view('admin.place.index', compact('places', 'users', 'links'));
     }
 
     public function create()
